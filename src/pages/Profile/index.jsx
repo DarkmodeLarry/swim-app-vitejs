@@ -3,12 +3,13 @@ import { Tabs } from 'antd'
 import moment from 'moment'
 import Appointments from './Appointments'
 import InstructorForm from '../InstructorForm'
+import UpdateProfile from '../UpdateProfile'
 
 function Profile() {
   const user = JSON.parse(localStorage.getItem('user'))
 
   return (
-    <div>
+    <div className=''>
       <Tabs>
         <Tabs.TabPane tab='Appointments' key='1'>
           <Appointments />
@@ -37,6 +38,9 @@ function Profile() {
         </Tabs.TabPane>
         <Tabs.TabPane tab='Stats' key='3'>
           Stats
+        </Tabs.TabPane>
+        <Tabs.TabPane tab='Update Profile' key='4'>
+          <UpdateProfile />
         </Tabs.TabPane>
       </Tabs>
     </div>

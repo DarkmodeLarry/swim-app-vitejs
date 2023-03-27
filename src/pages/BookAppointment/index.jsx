@@ -146,8 +146,8 @@ function BookAppointment() {
 
         <hr />
 
-        <div className='flex flex-col gap-1 my-1 w-half'>
-          <div className='flex justify-between w-full'>
+        <div className='flex flex-col gap-1 my-1 w-[500px]'>
+          <div className='flex justify-between '>
             <h4>
               <b>Speciality : </b>
             </h4>

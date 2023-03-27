@@ -17,7 +17,8 @@ function ProtectedRoute({ children }) {
 
   return (
     <div className='p-3'>
-      <div className='header bg-cyan-500 p-5 rounded flex justify-between items-center'>
+      <div className='header bg-cyan-600 p-5 rounded flex justify-between items-center'>
+        <BsYinYang className='text-4xl text-white' />
         <h2 className='cursor-pointer' onClick={() => navigate('/')}>
           <strong className='text-primary'>Flow State</strong>
           <strong className='text-secondary'> Swim</strong>

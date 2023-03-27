@@ -7,7 +7,7 @@ import AddInstructor from '../../api/instructors/addInstructor'
 import CheckIfInstructorAccountIsApplied from '../../api/instructors/checkIfInstructorAccountIsApplied'
 import UpdateInstructor from '../../api/instructors/updateInstructor'
 
-function InstructorForm() {
+function UpdateProfile() {
   const [form] = Form.useForm()
   const [alreadyApproved, setAlreadyApproved] = useState(false)
   const [days, setDays] = useState([])
@@ -359,19 +359,8 @@ function InstructorForm() {
           </Form>
         </>
       )}
-
-      {alreadyApplied && !alreadyApproved && (
-        <>
-          <div className='flex flex-col items-center gap-2'>
-            <h3 className='text-2xl'>
-              You have already applied for this Instructor account, please wait for the admin to
-              approve your request.
-            </h3>
-          </div>
-        </>
-      )}
     </div>
   )
 }
 
-export default InstructorForm
+export default UpdateProfile

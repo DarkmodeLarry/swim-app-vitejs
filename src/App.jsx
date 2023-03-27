@@ -9,6 +9,7 @@ import Profile from './pages/Profile'
 import InstructorForm from './pages/InstructorForm'
 import Admin from './pages/Admin'
 import BookAppointment from './pages/BookAppointment'
+import UpdateProfile from './pages/UpdateProfile'
 
 function App() {
   const { loading } = useSelector((state) => state.loader)
@@ -60,6 +61,7 @@ function App() {
               </ProtectedRoute>
             }
           />
+          <Route path='/updateprofile' element={<UpdateProfile />} />
         </Routes>
       </BrowserRouter>
     </div>
