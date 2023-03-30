@@ -34,10 +34,10 @@ function Home() {
 
   return (
     user && (
-      <div>
+      <div className='w-full'>
         <div className='flex w-full justify-between'>
           <div>
-            <input placeholder='Search Instructors' className='w-[400px] border-2' />
+            <input placeholder='Search Instructors' className='w-[400px] border-2 ' />
           </div>
           {user?.role !== 'instructor' && (
             <button
@@ -49,10 +49,10 @@ function Home() {
           )}
         </div>
 
-        <Row gutter={[16, 16]} className='my-2'>
+        <Row gutter={[16, 16]} className='my-2 w-full sm:w-[400px] flex flex-col justify-center'>
           {instructors.map((instructor) => {
             return (
-              <Col span={8}>
+              <Col span={24} className='m-1 '>
                 <div
                   onClick={() => navigate(`/bookappointment/${instructor.id}`)}
                   className='bg-black/20 p-2 flex flex-col gap-1 drop-shadow shadow-gray-500 border cursor-pointer'

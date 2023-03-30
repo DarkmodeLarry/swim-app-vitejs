@@ -2,8 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  input {
-    @apply w-full border bg-black/10 p-2 rounded;
-  }
+:root {
+  --montserrat: 'Montserrat', sans-serif;
+  --roboto: 'Roboto', sans-serif;
+  --monaco: 'Monaco', monospace;
+  --whitish: #f5f5f5;
+  --primary: #4a4a4a;
+}
+
+header {
+  font-family: var(--montserrat);
+}
+
+.montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.monaco {
+  font-family: 'Monaco', monospace;
+}
+
+input {
+  @apply w-full border bg-black/10 p-2 rounded;
+}
+
+.planBox {
+  @apply relative mx-1.5 flex h-20 w-[calc(100%/4)] cursor-default items-center justify-center rounded-sm bg-cyan-600 font-semibold shadow after:absolute after:top-full after:left-1/2 after:block after:-translate-x-1/2 after:border-8 after:border-b-0 after:border-transparent after:border-t-cyan-600 after:content-[''] md:h-32 lg:mx-8 text-[var(--whitish)] text-xl;
 }

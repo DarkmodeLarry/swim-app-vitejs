@@ -79,6 +79,7 @@ function InstructorForm() {
     <div className='bg-white p-2'>
       {(!alreadyApplied || alreadyApproved) && (
         <>
+          {' '}
           <h3 className='uppercase my-1'>
             {alreadyApproved ? 'Update your information' : 'Apply as an Instructor'}
           </h3>

@@ -359,6 +359,15 @@ function UpdateProfile() {
           </Form>
         </>
       )}
+
+      {alreadyApplied && !alreadyApproved && (
+        <div className='flex flex-col items-center gap-2'>
+          <h3 className='text-secondary'>
+            You have already applied for this doctor account , please wait for the admin to approve
+            your request
+          </h3>
+        </div>
+      )}
     </div>
   )
 }

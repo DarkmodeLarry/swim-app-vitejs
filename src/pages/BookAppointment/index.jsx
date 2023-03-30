@@ -7,6 +7,7 @@ import moment from 'moment'
 import BookInstructorAppointment from '../../api/appointments/bookInstructorAppointment'
 import GetInstructorAppointmentsOnDate from '../../api/appointments/getInstructorAppointmentsOnDate'
 import GetInstructorById from '../../api/instructors/getInstructorById'
+import { BsYinYang } from 'react-icons/bs'
 
 function BookAppointment() {
   const [problem, setProblem] = useState('')
@@ -61,7 +62,7 @@ function BookAppointment() {
 
       return (
         <div
-          className='bg-blue-200 p-2 cursor-pointer border-2 rounded w-64 h-full flex items-center justify-start'
+          className='bg-[var()] p-2 cursor-pointer border-2 rounded w-64 h-full flex items-center justify-start'
           onClick={() => setSelectedSlot(slot)}
           style={{
             border: selectedSlot === slot ? '3px solid green' : '1px solid gray',
@@ -137,62 +138,52 @@ function BookAppointment() {
 
   return (
     instructor && (
-      <div className='bg-white p-2'>
-        <h1 className='uppercase  my-1'>
-          <b>
-            {instructor?.firstName} {instructor?.lastName}
-          </b>
-        </h1>
-
+      <div className='p-2'>
         <hr />
 
-        <div className='flex flex-col gap-1 my-1 w-[500px]'>
-          <div className='flex justify-between '>
-            <h4>
-              <b>Speciality : </b>
-            </h4>
-            <h4>{instructor.speciality}</h4>
+        <div className='flex flex-col space-y-2 gap-1 my-1 w-full border-2'>
+          <div className='border-b bg-[#9d9ea0] h-24 flex gap-4 items-center'>
+            <div className='flex flex-col pl-[5%]'>
+              <BsYinYang className='flex items-center mx-4 text-5xl opacity-50' />
+            </div>
+            <h1 className='uppercase my-1'>
+              <b>
+                {instructor?.firstName} {instructor?.lastName}
+              </b>
+              <p className='text-center capitalize italic'>Coach</p>
+            </h1>
           </div>
-          <div className='flex justify-between w-full'>
-            <h4>
-              <b>Experience : </b>
+          <div className='flex justify-start w-full border-b'>
+            <h4 className='w-28'>
+              <b className='capitalize'>Email : </b>
             </h4>
-            <h4>
-              {instructor.experience}
-              Years
-            </h4>
+            <h4 className='capitalize'>{instructor.email}</h4>
           </div>
-          <div className='flex justify-between w-full'>
-            <h4>
-              <b>Email : </b>
-            </h4>
-            <h4>{instructor.email}</h4>
-          </div>
-          <div className='flex justify-between w-full'>
-            <h4>
+          <div className='flex justify-start text-sm capitalize w-full border-b'>
+            <h4 className='w-28'>
               <b>Phone : </b>
             </h4>
             <h4>{instructor.phone}</h4>
           </div>
-          <div className='flex justify-between w-full'>
-            <h4>
-              <b>Address : </b>
+          <div className='flex justify-start text-sm capitalize w-full border-b'>
+            <h4 className='w-28'>
+              <b>Location : </b>
             </h4>
-            <h4>{instructor.address}</h4>
+            <h4 className='text-sm'>{instructor.address}</h4>
           </div>
-          <div className='flex justify-between w-full'>
-            <h4>
+          <div className='flex justify-start text-sm capitalize w-full border-b'>
+            <h4 className='w-28'>
               <b>Fee : </b>
             </h4>
-            <h4 className='font-bold'>
+            <h4 className='w-28'>
               ${instructor.fee} <span className='font-normal'>/Session</span>
             </h4>
           </div>
-          <div className='flex justify-between w-full'>
-            <h4>
+          <div className='flex justify-start text-sm capitalize w-full'>
+            <h4 className='w-32'>
               <b>Days Available : </b>
             </h4>
-            <h4>{instructor.days.join(', ')}</h4>
+            <h4 className='font-semibold '>{instructor.days.join(', ')}</h4>
           </div>
         </div>
 
@@ -218,7 +209,7 @@ function BookAppointment() {
             <div>
               <textarea
                 className='border-2 w-[400px] h-[200px]'
-                placeholder='Enter training requests and health restrictions here'
+                placeholder='Health conditions, injuries, or other concerns'
                 value={problem}
                 onChange={(e) => setProblem(e.target.value)}
                 rows='10'

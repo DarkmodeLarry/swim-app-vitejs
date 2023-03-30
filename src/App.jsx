@@ -10,6 +10,7 @@ import InstructorForm from './pages/InstructorForm'
 import Admin from './pages/Admin'
 import BookAppointment from './pages/BookAppointment'
 import UpdateProfile from './pages/UpdateProfile'
+import Menu from './pages/Menu'
 
 function App() {
   const { loading } = useSelector((state) => state.loader)
@@ -62,6 +63,7 @@ function App() {
             }
           />
           <Route path='/updateprofile' element={<UpdateProfile />} />
+          <Route path='/menu' element={<Menu />} />
         </Routes>
       </BrowserRouter>
     </div>

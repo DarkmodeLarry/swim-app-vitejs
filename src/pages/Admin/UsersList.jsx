@@ -35,7 +35,8 @@ function UsersList() {
     },
     {
       title: 'Name',
-      dataIndex: 'name'
+      dataIndex: 'name',
+      render: (name) => name.toUpperCase()
     },
     {
       title: 'Email',

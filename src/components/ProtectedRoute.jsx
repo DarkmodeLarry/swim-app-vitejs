@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { IoIosLogIn } from 'react-icons/io'
+import { FaPowerOff } from 'react-icons/fa'
 import { BsYinYang } from 'react-icons/bs'
 
 function ProtectedRoute({ children }) {
@@ -17,41 +17,42 @@ function ProtectedRoute({ children }) {
 
   return (
     <div className='p-3'>
-      <div className='header bg-cyan-600 p-5 rounded flex justify-between items-center'>
-        <BsYinYang className='text-4xl text-white' />
-        <h2 className='cursor-pointer' onClick={() => navigate('/')}>
-          <strong className='text-primary'>Flow State</strong>
-          <strong className='text-secondary'> Swim</strong>
-        </h2>
+      <div className='bg-[var(--primary)] text-[var(--whitish)] p-5 rounded flex justify-between items-center'>
+        <div
+          className='flex flex-col cursor-pointer items-center font-extrabold italic text-2xl'
+          onClick={() => navigate('/')}
+        >
+          <h1 className=''>Flow State</h1>
+          <span className=''> Swim</span>
+        </div>
 
         {user && (
           <div className='flex gap-3 items-center'>
-            <div className='flex gap-4 items-center'>
-              <BsYinYang className='text-2xl ' />
-              <h4
-                className='uppercase cursor-pointer underline'
-                onClick={() => {
-                  if (user.role === 'admin') navigate('/admin')
-                  else navigate('/profile')
-                }}
-              >
+            <div
+              className='flex gap-4 items-center relative px-10 cursor-pointer'
+              onClick={() => {
+                if (user.role === 'admin') {
+                  navigate('/admin')
+                } else navigate('/profile')
+              }}
+            >
+              <BsYinYang className='text-7xl fixed opacity-10' />
+              <h4 className='uppercase text-lg font-semibold italic cursor-pointer tracking-wider'>
                 {user.name}
               </h4>
             </div>
 
-            <IoIosLogIn
-              className='text-3xl cursor-pointer text-blue-600'
+            <FaPowerOff
+              className='text-2xl sm:text-4xl cursor-pointer text-cyan-600'
               onClick={() => {
                 localStorage.removeItem('user')
                 navigate('/login')
               }}
-            >
-              LogOut
-            </IoIosLogIn>
+            />
           </div>
         )}
       </div>
-      <div className='content my-1'>{children}</div>
+      <main className='content my-1'>{children}</main>
     </div>
   )
 }

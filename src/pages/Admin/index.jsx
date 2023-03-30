@@ -5,13 +5,11 @@ import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { ShowLoader } from '../../redux/loaderSlice'
 import GetUserById from '../../api/users/getUserById'
-import { useNavigate } from 'react-router-dom'
 
 function Admin() {
   const [isAdmin, setIsAdmin] = useState(false)
   const user = JSON.parse(localStorage.getItem('user'))
   const dispatch = useDispatch()
-  const navigate = useNavigate()
 
   const checkIsAdmin = async () => {
     try {
@@ -35,7 +33,7 @@ function Admin() {
 
   return (
     isAdmin && (
-      <div className='bg-black/60 p-2'>
+      <div className='bg-black/60 p-2 text-xs'>
         <Tabs>
           <Tabs.TabPane tab='Swimmers' key='1'>
             <UsersList />

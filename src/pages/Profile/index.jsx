@@ -2,14 +2,13 @@ import React from 'react'
 import { Tabs } from 'antd'
 import moment from 'moment'
 import Appointments from './Appointments'
-import InstructorForm from '../InstructorForm'
 import UpdateProfile from '../UpdateProfile'
 
 function Profile() {
   const user = JSON.parse(localStorage.getItem('user'))
 
   return (
-    <div className=''>
+    <div className='bg-[#4a4a4a]/80 px-2'>
       <Tabs>
         <Tabs.TabPane tab='Appointments' key='1'>
           <Appointments />
@@ -18,7 +17,7 @@ function Profile() {
           <div className='my-1 bg-white p-1 flex flex-col gap-1'>
             <div className='flex gap-2'>
               <h4>
-                <b>Name : {user.name}</b>
+                <b className='capitalize'>Name : {user.name}</b>
               </h4>
             </div>
             <div className='flex gap-2'>
